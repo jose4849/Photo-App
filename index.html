@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>GSBD</title> 
+
+
+<meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+	
+	
+<script type="application/x-javascript"> addEventListener("load", function() { 
+var userkey =localStorage.getItem("username");
+if(userkey==null){
+//$('#login1').modal('show');
+}
+
+setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //For-Mobile-Apps-and-Meta-Tags -->
+<!-- Custom Theme files -->
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" type="text/css" href="css/style11.css" /><!-- menu style sheet -->
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all"> 
+<!-- //Custom Theme files -->
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> 
+<!-- //font-awesome icons -->
+
+<!-- web-fonts -->  
+<link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- //web-fonts -->
+</head>
+<body class="bg">
+		
+	   <!-- <div class="overlay overlay-simplegenie">
+			<button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+			<nav>
+								<ul>
+
+					<li>
+						<h1 style="color:white;">Login</h1>
+					</li>
+
+					<li><a href="supplier.html">SUPPLIER</a></li>
+
+					<li><a href="index.html">Home</a></li>
+
+					<li><a href="agentreg.html">AGENT REG</a></li>
+
+					<li><a href="tel:16290">HELP</a></li>
+
+				</ul>
+			</nav>
+		</div> -->
+	
+
+<style>
+
+.overlay {
+    height: 100%;
+    width:70%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+   
+  }
+}
+</style>
+
+
+<style>
+
+.overlaymenu {
+    height: 100%;
+    width:0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlaymenu-content {
+    position: relative;
+   
+    width: 100%;
+    text-align: center;
+    
+}
+
+.overlaymenu a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlaymenu a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlaymenu .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlaymenu a {font-size: 20px}
+  .overlaymenu .closebtn {
+    font-size: 40px;
+   
+  }
+}
+</style>
+
+<!--	
+<div id="myNav" class="overlay">
+  
+  <div class="overlay-content">
+    <p style="color:white;font-size:20px;margin-bottom:20px;">Process your request please wait a while. This screen auto close after finish. Thank you</p>
+	<button class="btn btn-success" onclick="closeNav()"  >Close</button>
+	
+  </div>
+</div>-->
+<style>
+.name{
+ background: url("img/background.png");
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ height:105px;
+ color:white;
+ font-size:10px;
+ line-height:14px;
+}
+.name select{ color:black; background-color:transparent; color:white; font-weight:bold; border:none;  }
+.menulist{
+margin-top: 20px;
+}
+.menulist li{ height: 50px; text-align: left;padding-left: 20px;font-weight: bolder; color: black; cursor:pointer; }
+.menulist a{ padding: 0px;font-size: 15px;color: black; }
+.menulist i{ : 0px;font-size: 18px;color: black; margin-right:20px; }
+</style>
+
+<div id="leftmenu" class="overlaymenu">
+  <div class="overlaymenu-content">
+  
+  
+  <div class="name">
+		<img src="img/profile.png" alt="Avatar" style="margin-top:5px;width:50px;border-radius: 50%;"><br><br>
+		<b id="username"></b><br>
+		<b>Usertype:</b>
+		<select class="usertype" id="usertype"  onchange="pagechange(this.value)">
+			<option value="RETIALER">Retailer</option>
+			<option value="SUPPLIER">Supplier</option>
+			<option value="EMPLOYEE">Employee</option>
+		</select><br>
+		
+  </div>
+  <ul class="menulist">
+  <li><a onclick="loadgroup()" ><i class="fa fa-rotate-right"></i>Refresh</a></li>
+  <li><a  onclick="loadgroup()" ><i class="fa fa-chain"></i>Group</a></li>
+  <li><a onclick="orderlist()"><i class="fa fa-briefcase"></i>New Order</a></li>
+  <li><a onclick="loadcart()"><i class="fa fa-shopping-cart"></i>Cart</a></li>
+  <li><a onclick="accountloadsupplier()"><i class="fa fa-tags"></i>Statement(S)</a></li>
+  <li><a onclick="alert('No access try later!')"><i class="fa fa-cog"></i>Setting</a></li>
+  <li><a onclick="leftmenuclose()"><i class="fa fa-times-circle"></i> Close</a></li>
+  </ul> 
+	
+  </div>
+</div>
+
+<!--
+<div id="startup2" class="overlay">
+ <style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 250%;
+  border-top: 16px solid blue;
+  border-right: 16px solid green;
+  border-bottom: 16px solid red;
+  border-left: 16px solid pink;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+  <div class="overlay-content" style="margin:0px auto;text-align:center;">
+	<div class="loader" style="margin: auto;"></div>
+    <p style="color:white;font-size:20px;margin-bottom:20px;">
+		<br>
+		Loading...
+	</p>
+	
+	
+  </div>
+</div>-->
+		
+<script> 
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>	
+ 
+
+
+	
+		<section class="header-w3ls"> 
+		    
+			<!--<button id="trigger-overlay" type="button"><i class="fa fa-home" aria-hidden="true"></i></button>-->
+			<a onclick="leftmenuopen()" ><button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button></a>
+			<a onclick="homeload()" style="color: white;font-size: 18px;font-weight: bolder;">GREENBD</a>
+			<input style="width:30px;" type="hidden" value="" id="userkey" />
+			<a style="float:right;" onclick="loadcart()"  ><button id="trigger-overlay" type="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button></a>
+			<!-- <div class="bottons-agileits-w3layouts">
+			<a class="page-scroll" href="#myModal2" id="username" data-toggle="modal"><i class="fa fa-sign-in" aria-hidden="true"></i></a>.
+			<a class="page-scroll" onclick="logout()"  ><button id="trigger-overlay" type="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button></a>.
+			<!-- <a class="page-scroll" href="#myModal3" data-toggle="modal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>GSBD</a>--->
+			</div>
+		
+		<div class="clearfix"> </div>
+		</section>
+<!-- //menu -->
+<!-- modal -->
+	<div class="modal about-modal w3-agileits fade" id="priceqtyupdate" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div> 
+				<div class="modal-body login-page "><!-- login-page -->     
+									<div class="login-top sign-top">
+										<div class="agileits-login">
+										<h5 id="productname"></h5>
+										    <h3 id="msg" style="text-align:center;color:red;font-size:11px;"></h3>
+											<input type="hidden" id="productid" value="" />
+											<label style="width:100%;"><b>Price :</b></label> <input style="width: 100%;"  type="text" class="email" id="price" placeholder="Price" required=""/>
+											<label style="width:100%;"><b>Available Qty :</b></label> <input style="width: 100%;" type="text" class="password" id="qty" placeholder="Quantity" required=""/>											 
+											<label style="width:100%;"><b>Min Qty :</b></label> <input style="width: 100%;" type="text" class="password" id="minqty" placeholder="Quantity" required=""/>											 
+											<div class="w3ls-submit"> 
+												<input type="submit" onclick="updatepriceqty()" value="UPDATE">  	
+											</div>	
+										
+
+										</div>  
+									</div>
+						</div>  
+				</div> <!-- //login-page -->
+			</div>
+		</div>
+	<!-- //modal --> 
+	
+<!-- modal -->
+	<div class="modal about-modal w3-agileits fade" id="addquantity" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div> 
+				<div class="modal-body login-page "><!-- login-page -->     
+									<div class="login-top sign-top">
+										<div class="agileits-login">
+										<h5 id="productname1"></h5>
+										<h5 style="color:green;font-size:20px;" id="productprice">0.00</h5>
+										    <h3 id="msg1" style="text-align:center;color:red;font-size:11px;"></h3>
+											<input type="hidden" id="productid1" value="" />
+											<input type="hidden" id="supplierid" value="" />
+											<input type="hidden" id="sprice" value="" />
+											<input type="hidden" id="price1" value="" />
+											<input type="hidden" id="max1" value="" />
+											<input type="hidden" id="min1" value="" />
+											<label style="width:45px;"><b>Qty :</b></label> <input style="width: 50%;" min="1" max="1" type="text" class="password" id="qty1" placeholder="Quantity" required=""/>											 
+											<div class="w3ls-submit"> 
+												<input type="submit" onclick="updatecart()" value="UPDATE">  	
+											</div>	
+										
+
+										</div>  
+									</div>
+						</div>  
+				</div> <!-- //login-page -->
+			</div>
+		</div>
+	<!-- //modal --> 	
+	
+	<!-- modal -->
+	<div class="modal about-modal w3-agileits fade" id="myModal3" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div> 
+				<div class="modal-body login-page "><!-- login-page -->     
+									<div class="login-top sign-top">
+										<div class="agileits-login">
+										<h5>Register</h5>
+										
+											<input type="text" id="name" placeholder="Full Name" required=""/>
+											<input type="text" id="organization" placeholder="Organization" required=""/>
+											<input type="text" id="nid" placeholder="NID" required=""/>
+											<input type="text" id="address_current" placeholder="Address Current" required=""/>
+											<select onchange="loadupazila(this.value)" class="form-control" id="district" required style="width:100%">
+												<option>Select District</option>
+												
+											</select>
+											
+											<select onchange="loadunion(this.value)"  class="form-control" id="upazila" required style="width:100%">
+												<option>Select Upazila</option>
+											
+											</select>
+											
+											<select class="form-control" id="union" required style="width:100%">
+												<option>Select Union</option>
+											
+											</select>
+											<input type="text" id="word" placeholder="Word" required=""/>
+											
+											<input type="text" id="mobile" placeholder="Mobile No" required=""/>
+											<input type="email"  id="email" placeholder="Email" required=""/>
+											
+											<select class="form-control" id="user_type" required style="width:100%">
+												<option>Select user type</option>
+												<option value="SUPPLIER">Supplier</option>
+												<option value="RETAILER">Retailer</option>
+											</select>
+											<div class="wthree-text"> 
+												<ul> 
+													<li>
+														<label class="anim">
+															<input type="checkbox" class="checkbox">
+															<span>Agree with term and condition</span> 
+														</label> 
+													</li>													
+												</ul>
+												<div class="clearfix"> </div>
+											</div>  
+											<div class="w3ls-submit"> 
+												<input onclick="register()" type="submit" value="Register">  	
+											</div>	
+										
+
+										</div>  
+									</div>
+						</div>  
+				</div> <!-- //login-page -->
+			</div>
+		</div>
+	<!-- //modal --> 
+
+	
+<!-- modal -->
+	<div class="modal about-modal w3-agileits fade" id="myModal4" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div> 
+				<div class="modal-body login-page "><!-- login-page -->     
+									<div class="login-top sign-top">
+										<div class="agileits-login">
+										<h5>New Product</h5>
+											<form id="uploadimage" action="" method="post" enctype="multipart/form-data">
+											<input type="text" name="productname" placeholder="Product Name" required=""/>
+											<input type="text" name="description" placeholder="description" required=""/>
+											<input type="text" name="warranty" placeholder="Warranty" required=""/>
+											<input type="file" name="userfile" id="userfile" required />  
+											<div class="w3ls-submit"> 
+												<input type="submit" value="Submit" class="submit" />  	
+											</div>	
+											</form>
+
+										</div>  
+									</div>
+						</div>  
+				</div> <!-- //login-page -->
+			</div>
+		</div>
+	<!-- //modal --> 	
+	
+
+	
+	<!-- modal -->
+	<div class="modal about-modal w3-agileits fade" id="login1" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div> 
+				<div class="modal-body login-page "><!-- login-page -->     
+									<div class="login-top sign-top">
+										<div class="agileits-login">
+										
+										
+											<input type="text" id="code" placeholder="CODE" value="" required=""/>										
+											<!--<input type="password" id="password" placeholder="Password" required=""/>-->
+											 
+											<div class="w3ls-submit"> 
+												<input type="submit" onclick="logincheck()" value="Login">  	
+											</div>	
+										
+
+										</div>  
+									</div>
+						</div>  
+				</div> <!-- //login-page -->
+			</div>
+		</div>
+	<!-- //modal --> 	
+	
+
+<!--Services-->
+<style>
+#productlist li{ cursor:pointer !important; }
+#productlist i{ cursor:pointer !important; }
+</style>
+
+<div class="options-wthree">
+    <div class="container" style="padding:0px; ">
+		<ul id="productlist" style="padding-bottom:50px;">
+		
+			<li>
+				<h1 style="font-size: 26px;font-weight: bold;color: gray;">No Connection</h1>
+				
+				<img style="width:40%;margin-top:20px;" src="img/wifi.gif">
+				
+				
+				<h1 style="font-size: 22px;margin-top:20px;font-weight: bold;color: gray;">Opps Something went wrong.</h1>
+				<h1 style="font-size: 12px;margin-top: 32px;">An internet error occourred,please try again</h1>
+				<div>
+					<button style="border: 1px solid gray;margin-top: 18px;width: 87%;color: white;font-size: 18px;font-weight: bold;background: gray;">TRY AGAIN</button>
+				</div>
+
+			</li>
+			<!--
+			<li>
+			<a onclick="signup()" class="opt-grids">
+				<div class="icon-agileits-w3layouts">
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</div>
+				<div class="opt-text-w3layouts">
+					<h6>Sign Up</h6>
+				</div>
+			</a>
+			</li>
+			<li>
+			<a onclick="login()" class="opt-grids">
+				<div class="icon-agileits-w3layouts">
+					<i class="fa fa-sign-in" aria-hidden="true"></i>
+				</div>
+				<div class="opt-text-w3layouts">
+					<h6>Login</h6>
+				</div>
+			</a>
+			</li>		
+			<li>
+			 <p onclick="onDeviceReady()" style="color:white" id="deviceProperties">
+			 
+							Device Model: <span id="model"></span> <br>
+							Device Cordova: <span id="cordova"></span>  <br>
+							Device Platform: <span id="platform"></span> <br> 
+							Device UUID: <span id="uuid"></span>  <br>
+							Device Version: <span id="version"></span>  <br>
+							<!-- Latitude: <span id="latitude"></span>  <br>
+							Longitude: <span id="longitude"></span>  <br> 
+                           
+			 
+			 </p> -->
+
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- <script type="text/javascript" src="cordova.js"></script>-->
+<script>
+function onDeviceReady(){
+		 
+		var model=device.model;
+		$("#model").html(model);
+		
+		var cordova=device.cordova;
+		$("#cordova").html(cordova);
+
+		var platform=device.platform;
+		$("#platform").html(platform);		
+
+		var uuid=device.uuid;
+		$("#uuid").html(uuid);		
+
+		var version=device.version;
+		$("#version").html(version);		
+		/*
+		var latitude=position.coords.latitude;
+		$("#latitude").html(latitude);
+
+		var longitude=position.coords.longitude;
+		$("#longitude").html(longitude);
+		*/
+		
+		
+}
+
+</script>
+<!--//Services-->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+</style>
+<div class="social-agileinfo footer" >
+	<a onclick="homeload()" style="border-right:1px solid gray;"class="social-icon-w3-agile facebook">
+		<i class="fa fa-home" aria-hidden="true"></i>
+	</a>
+	<a href="tel:+8801842449100"onclick="" style="border-right:1px solid gray;" class="social-icon-w3-agile google-plus">
+		<i class="fa fa-phone" aria-hidden="true"></i>
+	</a>
+	<a onclick="backvalue()" style="border-right:1px solid gray;" class="social-icon-w3-agile twitter">
+		<input id="backfunction" type="hidden" value="home" />
+		<input id="backvalue"  type="hidden" value="0" />
+		<input id="productcategory"  type="hidden" value="0" />
+		<i class="fa fa-back" aria-hidden="true"></i>
+	</a>
+	<a onclick="login()" class="social-icon-w3-agile rss">
+		<i class="fa fa-bullhorn" aria-hidden="true"></i>
+	</a>
+	<div class="clearfix"></div>
+</div>
+
+
+<!-- js -->
+<script type='text/javascript' src='js/jquery-2.2.3.min.js'></script>
+<!-- //js -->
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+
+<!--responsiveslides js-->
+<script src="js/responsiveslides.min.js"></script>
+			<script>
+						// You can also use "$(window).load(function() {"
+						$(function () {
+						  // Slideshow 4
+						  
+					
+						});
+			</script>
+			<script>
+							// You can also use "$(window).load(function() {"
+							$(function () {
+							  // Slideshow 3
+							  $("#slider3").responsiveSlides({
+								auto: true,
+								pager:false,
+								nav: true,
+								speed: 500,
+								namespace: "callbacks",
+								before: function () {
+								  $('.events').append("<li>before event fired.</li>");
+								},
+								after: function () {
+								  $('.events').append("<li>after event fired.</li>");
+								}
+							  });
+						
+							});
+						  </script>
+
+<!--//responsiveslides js-->
+
+
+<script src="js/ajax.js"></script>
+
+
+
+<script src="js/SmoothScroll.min.js"></script>
+<!--menu script-->
+<script type="text/javascript" src="js/modernizr-2.6.2.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/demo1.js"></script>
+<!--//menu script-->
+<!-- banner -->
+<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
+<!-- //banner -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!--js for bootstrap working-->
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>
